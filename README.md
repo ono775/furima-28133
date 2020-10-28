@@ -47,7 +47,6 @@ Things you may want to cover:
 
 | Columm           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| image            | string     | null: false                    |
 | name             | string     | null: false                    |
 | description      | string     | null: false                    |
 | category         | string     | null: false                    |
