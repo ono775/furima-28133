@@ -77,14 +77,15 @@ Things you may want to cover:
 
 ## addresses テーブル
 
-| Columm       | Type       | Options                        |
-| ------------ | ---------- | ------------------------------ |
-| postal_code  | integer    | null: false, unique: ture      |
-| prefectures  | string     | null: false, unique: ture      |
-| municipality | string     | null: false, unique: ture      |
-| address      | integer    | null: false, unique: ture      |
-| phone_number | integer    | null: false, unique: ture      |
-| order        | references | null: false, foreign_key: ture |
+| Columm        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| postal_code   | integer    | null: false, unique: ture      |
+| prefectures   | string     | null: false, unique: ture      |
+| municipality  | string     | null: false, unique: ture      |
+| address       | integer    | null: false, unique: ture      |
+| building_name | string     | unique: ture                   |
+| phone_number  | integer    | null: false, unique: ture      |
+| order         | references | null: false, foreign_key: ture |
 
 ### Association
 
