@@ -66,7 +66,6 @@ Things you may want to cover:
 
 | Columm        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| purchass_date | integer    | null: false                    |
 | user          | references | null: false, foreign_key: ture |
 | item          | references | null: false, foreign_key: ture |
 
