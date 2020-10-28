@@ -48,7 +48,7 @@ Things you may want to cover:
 | Columm           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | name             | string     | null: false                    |
-| description      | string     | null: false                    |
+| description      | text       | null: false                    |
 | category         | string     | null: false                    |
 | status           | string     | null: false                    |
 | shipping_charges | string     | null: false                    |
