@@ -14,7 +14,7 @@ class Item < ApplicationRecord
     validates :shipping_charges_id, numericality: { other_than: 1 }
     validates :shipping_area_id, numericality: { other_than: 1 }
     validates :shipping_date_id, numericality: { other_than: 1 }
-    validates :price
+    validates :price, numericality: { only_integer: true, greater_than: 299, less_than: 10000000 }
     validates :user_id
   end
 end
