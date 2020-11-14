@@ -13,7 +13,7 @@ class Item < ApplicationRecord
     validates :status_id, numericality: { other_than: 1 }
     validates :shipping_charges_id, numericality: { other_than: 1 }
     validates :shipping_area_id, numericality: { other_than: 1 }
-    validates :shipping_date_id
+    validates :shipping_date_id, numericality: { other_than: 1 }
     validates :price
     validates :user_id
   end
