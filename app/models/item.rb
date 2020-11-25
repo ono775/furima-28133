@@ -10,11 +10,13 @@ class Item < ApplicationRecord
     validates :image
     validates :name
     validates :description
-    validates :category_id, numericality: { other_than: 1 }
-    validates :status_id, numericality: { other_than: 1 }
-    validates :shipping_charges_id, numericality: { other_than: 1 }
-    validates :shipping_area_id, numericality: { other_than: 1 }
-    validates :shipping_date_id, numericality: { other_than: 1 }
     validates :price, numericality: { only_integer: true, greater_than: 299, less_than: 10_000_000 }
+    with_options numericality: { other_than: 1 } do
+      validates :category_id
+      validates :status_id
+      validates :shipping_charges_id
+      validates :shipping_area_id
+      validates :shipping_date_id
+    end
   end
 end
