@@ -30,7 +30,7 @@ Things you may want to cover:
 | Columm             | Type    | Options                   |
 | ------------------ | ------- | ------------------------- |
 | nickname           | string  | null: false               |
-| email              | string  | null: false, unique: ture |
+| email              | string  | null: false, unique: true |
 | encrypted_password | string  | null: false               |
 | last_name          | string  | null: false               |
 | first_name         | string  | null: false               |
@@ -66,8 +66,8 @@ Things you may want to cover:
 
 | Columm        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| user          | references | null: false, foreign_key: ture |
-| item          | references | null: false, foreign_key: ture |
+| user          | references | null: false, foreign_key: true |
+| item          | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -79,13 +79,13 @@ Things you may want to cover:
 
 | Columm         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
-| postal_code    | string     | null: false, unique: ture      |
-| prefectures_id | integer    | null: false, unique: ture      |
-| municipality   | string     | null: false, unique: ture      |
-| address        | string     | null: false, unique: ture      |
+| postal_code    | string     | null: false, unique: true      |
+| prefectures_id | integer    | null: false, unique: true      |
+| municipality   | string     | null: false, unique: true      |
+| address        | string     | null: false, unique: true      |
 | building_name  | string     |                                |
-| phone_number   | string     | null: false, unique: ture      |
-| order          | references | null: false, foreign_key: ture |
+| phone_number   | string     | null: false, unique: true      |
+| order          | references | null: false, foreign_key: true |
 
 ### Association
 
