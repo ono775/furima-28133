@@ -51,14 +51,14 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Status can't be blank")
       end
       it '配送料の負担が選択されていないと保存できない' do
-        @item.shipping_charges_id = 1
+        @item.shipping_charge_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Shipping charges must be other than 1')
+        expect(@item.errors.full_messages).to include('Shipping charge must be other than 1')
       end
       it '配送料の負担が空だと保存できない' do
-        @item.shipping_charges_id = nil
+        @item.shipping_charge_id = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping charges can't be blank")
+        expect(@item.errors.full_messages).to include("Shipping charge can't be blank")
       end
       it '発送元の地域が選択されていないと保存できない' do
         @item.shipping_area_id = 1
