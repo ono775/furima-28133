@@ -7,12 +7,17 @@ RSpec.describe UserOrder, type: :model do
 
   describe '購入情報の保存' do
     context '購入情報の保存ができるとき' do
-      it '郵便番号、都道府県、市区町村、番地、電話番号が存在すれば保存できる' do
+      it 'token、郵便番号、都道府県、市区町村、番地、電話番号が存在すれば保存できる' do
         expect(@user_order).to be_valid
       end
     end
 
     context '購入情報の保存ができないとき' do
+      it 'tokenが空だと保存できない' do
+        @user_order.token = nil
+        @user_order.valid?
+        expect(@user_order.errors.full_messages).to include("Token can't be blank")
+      end
       it '郵便番号が空だと保存できない' do
         @user_order.postal_code = nil
         @user_order.valid?
