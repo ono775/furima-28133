@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
-  before_action :set_item, only: [:index, :create]
+  before_action :set_item, :set_order, only: [:index, :create]
 
   def index
     if user_signed_in? && current_user.id != @item.user_id
@@ -25,6 +25,10 @@ class OrdersController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
+  end
+
+  def set_order
+    return unless @item.order == true
   end
 
   def order_params
