@@ -28,7 +28,9 @@ class OrdersController < ApplicationController
   end
 
   def set_order
-    return unless @item.order == true
+    if @item.order != nil
+      redirect_to root_path
+    end
   end
 
   def order_params
