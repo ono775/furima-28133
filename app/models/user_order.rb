@@ -11,7 +11,6 @@ class UserOrder
     validates :address
     validates :phone_number, length: { maximum: 11 }
     validates :token
-    # validates :order_id
   end
 
   def save
