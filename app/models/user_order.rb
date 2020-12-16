@@ -9,7 +9,7 @@ class UserOrder
     validates :prefectures_id, numericality: { other_than: 1 }
     validates :municipality
     validates :address
-    validates :phone_number, length: { maximum: 11 }
+    validates :phone_number, format: { with: /\A[0-9]{1,11}\z/ }, length: { maximum: 11 }
     validates :token
   end
 

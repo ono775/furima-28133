@@ -53,12 +53,17 @@ RSpec.describe UserOrder, type: :model do
         @user_order.valid?
         expect(@user_order.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
       end
-      it 'ログインしているユーザーが紐付いていないと保存できない' do
+      it '電話番号が英数混在していると保存できない' do
+        @user_order.phone_number = '12345678abc'
+        @user_order.valid?
+        expect(@user_order.errors.full_messages).to include('Phone number is invalid')
+      end
+      it 'user_idが空だと保存できない' do
         @user_order.user_id = nil
         @user_order.valid?
         expect(@user_order.errors.full_messages).to include("User can't be blank")
       end
-      it '購入商品のIDが紐付いていないと保存できない' do
+      it 'item_idが空だと保存できない' do
         @user_order.item_id = nil
         @user_order.valid?
         expect(@user_order.errors.full_messages).to include("Item can't be blank")
